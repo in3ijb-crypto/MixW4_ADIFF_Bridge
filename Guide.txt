@@ -1,0 +1,40 @@
+markdown# MixW4 to Log4OM Bridge
+
+A simple utility that automatically converts the MixW4 `.db3` log database into a standard `.adif` file.
+
+---
+
+## 📂 ADIF File Location
+
+The application generates and updates the ADIF file at the following path:
+* **`%APPDATA%\MixW4_to_Log4OM_Bridge\ponte_mixw.adi`**
+
+*(Full path example: `C:\Users\[Your_Windows_Username]\AppData\Roaming\MixW4_to_Log4OM_Bridge\ponte_mixw.adi`)*
+
+You will need to target this specific file inside Log4OM.
+
+---
+
+## 🛠️ Log4OM Configuration (ADIF Monitor)
+
+To automatically import your QSOs into Log4OM, you just need to set up the built-in ADIF Monitor:
+
+1. Open **Log4OM** and go to **Settings** > **Program Configuration**.
+2. In the left menu, click on **External Services**.
+3. Go to the **ADIF Functions** / **ADIF Monitor** tab.
+4. Check the box to **Enable** the ADIF Monitor.
+5. Click the folder icon and select the **ponte_mixw.adi** file located at the path mentioned above.
+6. Set the check interval (e.g., **2 seconds**) for real-time updates.
+7. Click **Save and Apply**.
+
+Once configured, Log4OM will automatically look at the file and pull in every new QSO you save in MixW4.
+
+---
+
+## 🚀 How it Works
+
+* The bridge reads the MixW4 `.db3` database.
+* It automatically exports new data to the `ponte_mixw.adi` file.
+* Log4OM detects the changes via **ADIF Monitor** and updates your main log instantly.
+
+73!
